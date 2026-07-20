@@ -3,10 +3,10 @@
 # brew services definition around the CLI installed by bitmot/tap/bitmot. Homebrew still requires
 # a url/sha256 pair, so the bitmot release archive doubles as this formula's (unused) source.
 class Io1d < Formula
-  desc "io1 publishing daemon: keeps configured local services published"
+  desc "Publishing daemon for io1: keeps configured local services published"
   homepage "https://bitmot.com"
-  license "MIT"
   version "0.2.33"
+  license "MIT"
 
   on_macos do
     on_arm do
@@ -34,7 +34,7 @@ class Io1d < Formula
 
   def install
     # opt_bin is the stable path across bitmot upgrades; the daemon dispatches on the io1d name.
-    bin.install_symlink Formula["bitmot/tap/bitmot"].opt_bin/"bitmot" => "io1d"
+    bin.install_symlink formula_opt_bin("bitmot/tap/bitmot")/"bitmot" => "io1d"
     (etc/"io1d").mkpath
     (etc/"io1d/conf.d").mkpath
   end

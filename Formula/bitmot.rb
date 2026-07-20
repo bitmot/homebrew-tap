@@ -5,8 +5,8 @@
 class Bitmot < Formula
   desc "Publish local services to public io1.io URLs"
   homepage "https://bitmot.com"
-  license "MIT"
   version "0.2.33"
+  license "MIT"
 
   on_macos do
     on_arm do
