@@ -8,6 +8,8 @@ class Io1d < Formula
   version "0.2.33"
   license "MIT"
 
+  depends_on "bitmot/tap/bitmot"
+
   on_macos do
     on_arm do
       url "https://bitmot.com/download/releases/0.2.33/bitmot-macos-arm64.tar.gz"
@@ -29,8 +31,6 @@ class Io1d < Formula
       sha256 "1353133e939f930018b8fa528d682b1d7c774f6c6dd19e72125af8cb2b05a697"
     end
   end
-
-  depends_on "bitmot/tap/bitmot"
 
   def install
     # opt_bin is the stable path across bitmot upgrades; the daemon dispatches on the io1d name.
