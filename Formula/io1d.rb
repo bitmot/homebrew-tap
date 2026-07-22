@@ -13,22 +13,22 @@ class Io1d < Formula
   on_macos do
     on_arm do
       url "https://bitmot.com/download/releases/0.2.44/bitmot-macos-arm64.tar.gz"
-      sha256 "c72423fbd139fc0645500f4d156fb315e07c22bef98c60c5e64cac7446ff7d97"
+      sha256 "f340ed07a09636cb077ede2806fb7e2e3a075b1c85340d8d1f3cb45c3a2ebe9c"
     end
     on_intel do
       url "https://bitmot.com/download/releases/0.2.44/bitmot-macos-x86_64.tar.gz"
-      sha256 "686583470595a0d62dc222a921e89d82d59492b9cd92f766ff651f6c6aec3c0b"
+      sha256 "75ede396c51ab954698e46469b921b8df2976f994b30117b18cb2636e260586b"
     end
   end
 
   on_linux do
     on_arm do
       url "https://bitmot.com/download/releases/0.2.44/bitmot-linux-aarch64.tar.gz"
-      sha256 "72ea87053b1fb07b34dea29ec1bdedc69268ee03cb0605f0cbc20e4a93287a24"
+      sha256 "8c389d9c32bff2647d1ea6cf153dca591823a5b8f11be2c59834aafc2781e87d"
     end
     on_intel do
       url "https://bitmot.com/download/releases/0.2.44/bitmot-linux-x86_64.tar.gz"
-      sha256 "729e8aa004b263e81f6a2f7d59653db5779152d76f4bfc1b545c16ba03039afc"
+      sha256 "20fd756a499ee6bdcb75d4ed6b4b1ffc8d442cd048a66b626a75e06c0257d7f9"
     end
   end
 
