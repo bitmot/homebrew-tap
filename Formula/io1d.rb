@@ -1,40 +1,39 @@
 # Rendered by operations/homebrew/publish.sh from io1d.rb.template; do not edit in the tap.
-# The daemon is the bitmot binary, multi-call on argv[0]: this formula adds the io1d name plus a
-# brew services definition around the CLI installed by bitmot/tap/bitmot. Homebrew still requires
-# a url/sha256 pair, so the bitmot release archive doubles as this formula's (unused) source.
+# io1d is the io1 publishing daemon. It is the same program as the bitmot CLI (multi-call on
+# argv[0]), but shipped here as its own physically separate, byte-identical binary so it installs
+# and upgrades independently of bitmot - with no symlink into the CLI keg and no dependency on it.
 class Io1d < Formula
   desc "Publishing daemon for io1: keeps configured local services published"
   homepage "https://bitmot.com"
-  version "0.2.44"
+  version "0.2.45"
   license "MIT"
-
-  depends_on "bitmot/tap/bitmot"
 
   on_macos do
     on_arm do
-      url "https://bitmot.com/download/releases/0.2.44/bitmot-macos-arm64.tar.gz"
-      sha256 "f340ed07a09636cb077ede2806fb7e2e3a075b1c85340d8d1f3cb45c3a2ebe9c"
+      url "https://bitmot.com/download/releases/0.2.45/io1d-macos-arm64.tar.gz"
+      sha256 "ec8c2ec45410d65b2cff55e3a3dee389afebc0a486e7cc59da4071eefcc5cfa6"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/0.2.44/bitmot-macos-x86_64.tar.gz"
-      sha256 "75ede396c51ab954698e46469b921b8df2976f994b30117b18cb2636e260586b"
+      url "https://bitmot.com/download/releases/0.2.45/io1d-macos-x86_64.tar.gz"
+      sha256 "93bf1f7f605caa2ffe1e0d4e156c153d1a215a7cc5e537b99b5be251c9803e50"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://bitmot.com/download/releases/0.2.44/bitmot-linux-aarch64.tar.gz"
-      sha256 "8c389d9c32bff2647d1ea6cf153dca591823a5b8f11be2c59834aafc2781e87d"
+      url "https://bitmot.com/download/releases/0.2.45/io1d-linux-aarch64.tar.gz"
+      sha256 "8deb8822331095be1bb4042e56454abb7675445427e147f7fcac35b8ddb669ce"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/0.2.44/bitmot-linux-x86_64.tar.gz"
-      sha256 "20fd756a499ee6bdcb75d4ed6b4b1ffc8d442cd048a66b626a75e06c0257d7f9"
+      url "https://bitmot.com/download/releases/0.2.45/io1d-linux-x86_64.tar.gz"
+      sha256 "2e6a148fed50e23521b0da8ff899a4654e08b1e5e6968ced8b9f9eaec4dfaafb"
     end
   end
 
   def install
-    # opt_bin is the stable path across bitmot upgrades; the daemon dispatches on the io1d name.
-    bin.install_symlink formula_opt_bin("bitmot/tap/bitmot")/"bitmot" => "io1d"
+    # A real, independently versioned binary named io1d; the program dispatches to the daemon on the
+    # io1d name. No symlink into the bitmot keg, so `brew uninstall bitmot` never breaks the daemon.
+    bin.install "io1d"
     (etc/"io1d").mkpath
     (etc/"io1d/conf.d").mkpath
   end
