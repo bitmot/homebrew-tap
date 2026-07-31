@@ -5,28 +5,28 @@
 class Io1d < Formula
   desc "Publishing daemon for io1: keeps configured local services published"
   homepage "https://bitmot.com"
-  version "0.2.75"
+  version "0.2.76"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://bitmot.com/download/releases/0.2.75/io1d-macos-arm64.tar.gz"
-      sha256 "ac001d64f9e26dcaa5c4b53fe9daf2fd7db36f7d629fefb4765317d856019d36"
+      url "https://bitmot.com/download/releases/0.2.76/io1d-macos-arm64.tar.gz"
+      sha256 "d842c602f1f63ca6b00d55372661c39f6eda612934b5cfa8e78b9966c589f7b7"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/0.2.75/io1d-macos-x86_64.tar.gz"
-      sha256 "438bd0cfece78c0d7b0b6da2d81c5f6f92e8e60b56295ceb3b28b9dd23704447"
+      url "https://bitmot.com/download/releases/0.2.76/io1d-macos-x86_64.tar.gz"
+      sha256 "afb10a0d2bce07ea0ba64bb37aa9a701bb3f3f0e3e2ceac611247030a1fdcc81"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://bitmot.com/download/releases/0.2.75/io1d-linux-aarch64.tar.gz"
-      sha256 "ec309efe8f6881dc74351ee5066fbd47007b29792c6fa4e2fb948aa46aacc44a"
+      url "https://bitmot.com/download/releases/0.2.76/io1d-linux-aarch64.tar.gz"
+      sha256 "4a5284ec2a87ab01fdf19813501c83c11f214baa554fbfda2e165d15e6663a7c"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/0.2.75/io1d-linux-x86_64.tar.gz"
-      sha256 "c586b2fcb90a2d1ba67248dd118130eb9043b3554130802cb62a7b963a929ca8"
+      url "https://bitmot.com/download/releases/0.2.76/io1d-linux-x86_64.tar.gz"
+      sha256 "bea0671e761ccbdf857a9def5e3b3a86a4819bcf54c4200c059586c9269480ad"
     end
   end
 
