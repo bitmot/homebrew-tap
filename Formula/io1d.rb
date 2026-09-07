@@ -5,28 +5,28 @@
 class Io1d < Formula
   desc "Publishing daemon for io1: keeps configured local services published"
   homepage "https://bitmot.com"
-  version "0.3.81"
+  version "0.3.82"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://bitmot.com/download/releases/0.3.81/io1d-macos-arm64.tar.gz"
-      sha256 "1313c2c373e766b6ee4972ad8f15fee024079f704620517e302421ecbffaee5b"
+      url "https://bitmot.com/download/releases/0.3.82/io1d-macos-arm64.tar.gz"
+      sha256 "a426d5ff54599450e074810cb21ba553f96f34f7b94cfec4121004db07b97dd9"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/0.3.81/io1d-macos-x86_64.tar.gz"
-      sha256 "c8bf49a850a27310b5124423ebbdee30abef3c279e1bc28411b4c0c6d576c7db"
+      url "https://bitmot.com/download/releases/0.3.82/io1d-macos-x86_64.tar.gz"
+      sha256 "d680a9de88a9680c5f976a77a4ae06e0ef913e12a79f33006a18fcab5eb561e5"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://bitmot.com/download/releases/0.3.81/io1d-linux-aarch64.tar.gz"
-      sha256 "28dd65ea0f3ccca57b0855cc009f36fd07e63e7a3d476661a61efee1d5c720ca"
+      url "https://bitmot.com/download/releases/0.3.82/io1d-linux-aarch64.tar.gz"
+      sha256 "f9ca4d1e1fe5c40764f210e1e0923b1dd3cba4f2f2baea757bd8d362c26284fa"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/0.3.81/io1d-linux-x86_64.tar.gz"
-      sha256 "f80ee6ff59302cf9028f054efe921b6845d484c22d5ac9127c50a1256dadcc7d"
+      url "https://bitmot.com/download/releases/0.3.82/io1d-linux-x86_64.tar.gz"
+      sha256 "749972fefe7fa47517045dc61483b2fcda24654d66973f31aada435d8f33895f"
     end
   end
 
@@ -52,15 +52,22 @@ class Io1d < Formula
     <<~EOS
       Authorize this machine and add publications before starting the service:
 
-        io1d authorize --config-dir #{etc}/io1d
+        io1d authorize
 
-      (A warning about a missing 'io1' group is harmless here; the service runs as you.)
+      (The config directory #{etc}/io1d is derived from the binary, so no --config-dir is
+      needed. A warning about a missing 'io1' group is harmless here; the service runs as you.)
 
-      Then define each site as a [[publish]] block in #{etc}/io1d/conf.d/*.toml,
-      check the configuration, and start the daemon:
+      Then define each site as a [[publish]] block in #{etc}/io1d/conf.d/*.toml, check the
+      configuration with `io1d check`, and start the daemon. Two postures:
 
-        io1d check --config-dir #{etc}/io1d
+      Publish-only (runs as you, starts at login):
+
         brew services start io1d
+
+      Always-on (a root LaunchDaemon: starts at boot before login, survives reboots
+      unattended, required for private-network membership):
+
+        sudo io1d service install
 
       Guide: https://docs.bitmot.com
     EOS
