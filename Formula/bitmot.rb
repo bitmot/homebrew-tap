@@ -5,28 +5,28 @@
 class Bitmot < Formula
   desc "Publish local services to public io1.io URLs"
   homepage "https://bitmot.com"
-  version "1.0.8"
+  version "1.0.9"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://bitmot.com/download/releases/1.0.8/bitmot-macos-arm64.tar.gz"
-      sha256 "7a659529d007b41be26d92a5b0891acee6393cbba9a142f322ea7b2060aa4292"
+      url "https://bitmot.com/download/releases/1.0.9/bitmot-macos-arm64.tar.gz"
+      sha256 "4a4008b1d50fa14c1060e4b013619caea59078ecd3d4e266d62257317a62e8d5"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/1.0.8/bitmot-macos-x86_64.tar.gz"
-      sha256 "022ef561abaa4bd434d46acc76d8aaa2ee34a703cb5b316b7831c1d551f8cba8"
+      url "https://bitmot.com/download/releases/1.0.9/bitmot-macos-x86_64.tar.gz"
+      sha256 "b2e95439834615a42b6e2f5d33cd012b9b51b33ee74ef41409b2b9fee8c770ae"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://bitmot.com/download/releases/1.0.8/bitmot-linux-aarch64.tar.gz"
-      sha256 "db11e379aeb13f00512f27a4d445e83b8f036d40277b8a8a063bf8fe32a6da2c"
+      url "https://bitmot.com/download/releases/1.0.9/bitmot-linux-aarch64.tar.gz"
+      sha256 "8790c1f939336bdf714cc2a219d12d54586b23268b1d869f47f49a7085c6a71f"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/1.0.8/bitmot-linux-x86_64.tar.gz"
-      sha256 "556851b53f6d507cd31249a40f3880fa089e0fbdef46a8eb7e92ec6f1d253ab5"
+      url "https://bitmot.com/download/releases/1.0.9/bitmot-linux-x86_64.tar.gz"
+      sha256 "ad8e2cf597a1d708d0f960420a44cbc8adcdf855bfbf505fcdef91f364c7df29"
     end
   end
 
