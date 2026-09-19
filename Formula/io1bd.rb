@@ -5,28 +5,28 @@
 class Io1bd < Formula
   desc "Build server for io1: builds and serves sites whose recipes live in console Projects"
   homepage "https://bitmot.com"
-  version "1.0.28"
+  version "1.0.29"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://bitmot.com/download/releases/1.0.28/io1bd-macos-arm64.tar.gz"
-      sha256 "ed13857b58659f5738af6195f4364bc615b395e909d8b4dc384b997f5f7de838"
+      url "https://bitmot.com/download/releases/1.0.29/io1bd-macos-arm64.tar.gz"
+      sha256 "2b0f2a3c0efdc1ff46af57e676bf4ee553f28fd8904047c5ce588618fa1c461c"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/1.0.28/io1bd-macos-x86_64.tar.gz"
-      sha256 "b32e5fc4c508eed89b3b1100531f482ab3f425f1f8899ab75a578ab6b232e5c7"
+      url "https://bitmot.com/download/releases/1.0.29/io1bd-macos-x86_64.tar.gz"
+      sha256 "bb26c7da8d5a818f6bf659f4d15b49338a73ea13bc57ff09f47c7e28580f56c7"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://bitmot.com/download/releases/1.0.28/io1bd-linux-aarch64.tar.gz"
-      sha256 "6f4107f257c888cf7d066ee71db4d1e9a04dfdb1636abaf38b3535b6be4d34f5"
+      url "https://bitmot.com/download/releases/1.0.29/io1bd-linux-aarch64.tar.gz"
+      sha256 "f5637ba2cdd015ed7ca6163f74df266a939cc6d4bd400daf719a2d627e23001e"
     end
     on_intel do
-      url "https://bitmot.com/download/releases/1.0.28/io1bd-linux-x86_64.tar.gz"
-      sha256 "f1d432de92cb2db186c0f470b9abb3b624df9a545e796d4b6c6a08b1ba88e340"
+      url "https://bitmot.com/download/releases/1.0.29/io1bd-linux-x86_64.tar.gz"
+      sha256 "48cdc6608952bd444b93c22b46c5288a04388479d90d78eda92a26b39bcbc00f"
     end
   end
 
